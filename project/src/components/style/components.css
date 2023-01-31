@@ -1,0 +1,30 @@
+.navBar {
+    background-color: darkslategray;
+    color:white;
+    height:80px;
+    display: flex;
+    /* margin: auto; */
+    align-items: center;
+
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+}
+
+.logo {
+    margin:10px;
+    font-size:50px;
+}
+.linkContainer {
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+   
+}
