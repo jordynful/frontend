@@ -10,6 +10,7 @@ function Header() {
         <FaStumbleuponCircle className = "logo"/>
       <Link to='/book-tickets' className='navLink'>Book Tickets</Link>
       </div>
+      <Link to='/login' className='login'>Login</Link>
       </div>
       </>
     );

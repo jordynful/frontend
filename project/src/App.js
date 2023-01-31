@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import Book from './pages/Book';
+import Login from './pages/Login';
 import './App.css';
 import {
   BrowserRouter,
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/book-tickets" element={<Book />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
         </div>
         <Footer />

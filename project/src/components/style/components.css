@@ -28,3 +28,13 @@
     display: flex;
    
 }
+
+.login {
+    position:absolute;
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    margin-left: 20px;
+
+    
+}
