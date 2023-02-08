@@ -5,6 +5,7 @@ import Movies from './pages/Movies';
 import Book from './pages/Book';
 import Login from './pages/Login';
 import { useState } from 'react';
+import ShowTimes from './pages/ShowTimes';
 import './App.css';
 import {
   BrowserRouter,
@@ -43,6 +44,7 @@ function App() {
             <Route path="/movies" element={<Movies/>} />
             <Route path="/book-tickets" element={<Book />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/ShowTimes" element={<ShowTimes />} />
         </Routes>
         </div>
         <Footer />

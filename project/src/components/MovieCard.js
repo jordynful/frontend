@@ -1,5 +1,8 @@
 import './style/movieCard.css';
 import { useState } from 'react';
+import { Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'
 const MovieCard = props  => {
     const [flip, setFlip] = useState(false);
 
@@ -17,7 +20,10 @@ const MovieCard = props  => {
         <img src= {props.imageUrl} onClick = {handleClick}/>
         )}
         {flip &&(
+            <>
         <p onClick = {handleClickBack}>{props.description}</p>
+        <Link to ={{pathname:"/ShowTimes", movie: props.title }} className=''>See Show Times</Link>
+        </>
         )}
         
     </div>
