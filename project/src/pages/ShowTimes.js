@@ -41,11 +41,16 @@ const ShowTimes = ()  => {
     const [showTimeSelected, setShowTimeSelected] = useState(false);
     const [showSeats, setShowSeats] = useState(false);
     const [checkout, setCheckout] = useState(false);
+    const [showTime, setShowTime] = useState(false);
     const [totalTickets, setTotalTickets] = useState(0);
 
 
     const handleShowTimeSelect = () => {
+        setShowTime(true);
         setShowTimeSelected(true);
+    }
+    const handleConfirmDate = () => {
+        setShowTime(true);
     }
 
     const handleConfirmTickets = () => {
@@ -92,13 +97,23 @@ const ShowTimes = ()  => {
     <>
     <div className = "contains">
     <div className = "ShowTimes">
+
         <h1> {state.from}</h1>
         <h3>Show Times</h3>
+        <div className='tickets'>
+        <form >
+            <label for="date">Date</label><br/>
+            <input type="date" id="date"/><br/>
+        </form>
+        <Button onClick={handleConfirmDate}>Select Date</Button>
+        </div>
+        {(showTime &&
         <div className = "buttonShow">
             {times.map(time => (
                 <p className = "times" onClick={handleShowTimeSelect}>{time.time}</p>
             ))}
         </div>
+        )}
     </div>
 {showTimeSelected &&
     <div className = "Tickets">
