@@ -49,3 +49,31 @@ height:auto;
     position: absolute;
   }
 
+.button {
+  border-radius: 5px;
+  text-decoration: none;
+  border:none;
+  font-size: 1em;
+  color:black;
+  background-image: linear-gradient(to right, #c6e7f0 0%, #8fd3f4 51%, #c6e7f0 100%);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  width: 170px;
+  box-shadow: 0 0 20px #eee;
+ }
+
+ .flippedSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height:300px; */
+ }
+
+ .back {
+  margin-top: 50px;
+  margin-right:150px;
+ }
