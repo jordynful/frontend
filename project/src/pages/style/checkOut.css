@@ -1,0 +1,13 @@
+.column {
+    margin: auto;
+    padding: 50px;
+}
+
+.row {
+    margin: auto;
+    display: inline-flex;
+}
+
+img {
+    width: 70px;
+}

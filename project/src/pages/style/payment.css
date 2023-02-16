@@ -1,0 +1,24 @@
+#cvv {
+    width: 10%;
+}
+
+#expmon {
+    width: 10%;
+}
+
+#expyear {
+    width: 10%;
+}
+
+#nameoncard {
+    width: 40%;
+}
+
+#cardnumber {
+    width: 40%;
+}
+
+.payment {
+    width: 50%;
+    margin: auto;
+}

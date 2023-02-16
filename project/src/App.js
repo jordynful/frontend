@@ -6,6 +6,8 @@ import Book from './pages/Book';
 import Login from './pages/Login';
 import { useState } from 'react';
 import ShowTimes from './pages/ShowTimes';
+import Payment from './pages/Payment';
+import CheckOut from './pages/Checkout';
 import './App.css';
 import {
   BrowserRouter,
@@ -45,6 +47,8 @@ function App() {
             <Route path="/book-tickets" element={<Book />} />
             <Route path="/login" element={<Login />} />
             <Route path="/ShowTimes" element={<ShowTimes />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/checkout" element={<CheckOut />} />
         </Routes>
         </div>
         <Footer />
