@@ -1,11 +1,18 @@
 .navBar {
-    background-color: darkslategray;
+    /* background-color: #E50914; */
+    background-image: linear-gradient(to right, #f07177 0%, #E50914 51%, #f07177 100%);
     color:white;
     height:80px;
     display: flex;
     /* margin: auto; */
     align-items: center;
+    background-size: 200% auto;
+    transition: 1.0s;
 
+}
+
+.navBar:hover {
+background-position: right center;
 }
 
 .navLink {

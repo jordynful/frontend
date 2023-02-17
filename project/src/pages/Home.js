@@ -79,7 +79,7 @@ function Home(props) {
   // }, []);
   return (
     <>
-      <h1>Movies</h1>
+      <h1 className = "mov">Movies</h1>
       <Layout items={BREAKFAST}/>
     </>
   );

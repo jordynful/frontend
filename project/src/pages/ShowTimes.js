@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { MdChair } from "react-icons/md";
 import { Link } from 'react-router-dom';
+
 const times = [
     {
       time: "10:00AM",
@@ -50,7 +51,13 @@ const ShowTimes = ()  => {
         setShowTimeSelected(true);
     }
     const handleConfirmDate = () => {
+        let date = document.getElementById("date").value;
+        if (date) {
         setShowTime(true);
+        }
+        else {
+            alert("please select a valid date");
+        }
     }
 
     const handleConfirmTickets = () => {
@@ -96,34 +103,42 @@ const ShowTimes = ()  => {
     //need to make a request to the database to retrieve available showtimes
     <>
     <div className = "contains">
-    <div className = "ShowTimes">
+   
+        <div className = "titleBox">
+            <h1> {state.from}</h1>
+        </div>
 
-        <h1> {state.from}</h1>
-        <h3>Show Times</h3>
-        <div className='tickets'>
-        <form >
-            <label for="date">Date</label><br/>
-            <input type="date" id="date"/><br/>
-        </form>
-        <Button onClick={handleConfirmDate}>Select Date</Button>
-        </div>
-        {(showTime &&
-        <div className = "buttonShow">
-            {times.map(time => (
-                <p className = "times" onClick={handleShowTimeSelect}>{time.time}</p>
-            ))}
-        </div>
-        )}
-    </div>
+        <div className = "buyTicketsBox">
+
+            <div className = "ShowTimes">
+
+                <h3>Buy Tickets</h3>
+                <div className='tickets'>
+                    <form >
+                        <label for="date">Date</label><br/>
+                        <input type="date" id="date"/><br/>
+                    </form>
+                    <Button onClick={handleConfirmDate} className = "button">Confirm Date</Button>
+                </div>
+                    {(showTime &&
+                    <div className = "buttonShow">
+                        {times.map(time => (
+                        <p className = "times" onClick={()=> {
+                            handleShowTimeSelect();
+                        }}>{time.time}</p>
+                    ))}
+                    </div>
+                    )}
+            </div>
 {showTimeSelected &&
     <div className = "Tickets">
-        <form >
+        <form>
             <label for="adults">Adult:</label><br/>
             <input type="number" id="adults" name="fname"/><br/>
             <label for="children">Children:</label><br/>
             <input type="number" id="children" name="fname"/><br/>
         </form>
-        <Button onClick={handleConfirmTickets}>Confirm Tickets</Button>
+        <Button onClick={handleConfirmTickets} className = "button">Confirm Tickets</Button>
     </div>
 }
 {showSeats && (
@@ -257,6 +272,8 @@ const ShowTimes = ()  => {
 
             </div>
                 )}
+       
+
     </div>
     </>
 )}
@@ -269,6 +286,7 @@ const ShowTimes = ()  => {
     </div>     
         
  )}
+</div>
 </div>
     </>
   );
