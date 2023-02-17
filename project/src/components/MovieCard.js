@@ -2,9 +2,10 @@ import './style/movieCard.css';
 import { useState } from 'react';
 import { Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import Modal from 'react-modal';
+import {FaChevronCircleLeft} from 'react-icons/fa';
+import { useLocation} from "react-router-dom"
 
 //Code for embedding youtube video
 import PropTypes from "prop-types";
@@ -61,27 +62,31 @@ const MovieCard = props  => {
         )}
         {flip &&(
             <>
-        <p onClick = {handleClickBack}>{props.description}</p>
-        <Link to ={{pathname:"/ShowTimes", movie: props.title }} className=''>See Show Times</Link>
+              <div className = "flippedSide">
+                
+                <p>{props.description}</p>
+                  <Link to={{pathname :"/ShowTimes"}} state={{from: props.title}} className='button'>See Show Times</Link>
 
-        <button onClick={openModal}>Watch Trailer</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style="content"
-        contentLabel="Example Modal"
-      >
-        <button onClick={closeModal}>close</button>
-            <div>
-                <YoutubeEmbed embedId="rokGy0huYEA" />
-            </div>
-      </Modal>
-
-        </>
+                  <button onClick={openModal} className="button">Watch Trailer</button>
+                  <Modal
+                  isOpen={modalIsOpen}
+                  onAfterOpen={afterOpenModal}
+                  onRequestClose={closeModal}
+                  style="content"
+                  contentLabel="Example Modal"
+                  >
+                    <button onClick={closeModal}>close</button>
+                  <div>
+                    <YoutubeEmbed embedId="rokGy0huYEA" />
+                  </div>
+                  </Modal>
+                  
+              </div>
+            <FaChevronCircleLeft className = "back" onClick = {handleClickBack}/>
+            </>
         )}
         
-    </div>
+      </div>
     </>
   );
 }
