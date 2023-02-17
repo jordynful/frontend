@@ -1,11 +1,11 @@
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import './style/payment.css';
 
 function Payment() {
     return (
         <div class="payment">
             <h4>Payment Info</h4>
-            <form onSubmit={<Redirect to="/" />}>
+            <form onSubmit={<Navigate to="/" />}>
                 <label for="nameoncard">Name on Card: </label>
                 <input type="text" id="nameoncard" name="nameoncard"></input> <br />
                 <label for="cardnumber">Card Number: </label>

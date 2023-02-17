@@ -6,6 +6,11 @@ import './style/checkOut.css';
 function CheckOut() {
     let salesTax = 0.08 * 30.0;
     let totalSale = 30.0 + salesTax + 3.0;
+    const handlePromo = () => {
+        //handle promo
+
+    }
+
     return (
         <div class="checkout">
             <div class ="row">
@@ -13,7 +18,7 @@ function CheckOut() {
                     <p>Adult Ticket x2 <br />The Avengers<br />9:00 p.m.</p>
                 </div>
                 <div class="column">
-                    <img src='https://flxt.tmsimg.com/assets/p8815512_p_v8_ax.jpg'></img>
+                    <img src='https://flxt.tmsimg.com/assets/p8815512_p_v8_ax.jpg' alt="smth"></img>
                 </div>
                 <div class="column">
                     <p>Subtotal: $30 <br />Sales Tax: ${salesTax} <br />Online fees: $3.00 <br />Total: ${totalSale}</p>

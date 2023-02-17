@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import { useState } from 'react';
 import ShowTimes from './pages/ShowTimes';
 import Payment from './pages/Payment';
-import CheckOut from './pages/Checkout';
+import CheckOut from './pages/CheckOut';
 import './App.css';
 import {
   BrowserRouter,
