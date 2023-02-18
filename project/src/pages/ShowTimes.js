@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 import { MdChair } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
+import { useNavigate } from "react-router-dom";
+
 const times = [
     {
       time: "10:00AM",
@@ -34,7 +36,10 @@ const times = [
   
   ];
 const ShowTimes = ()  => {
+    const [loggedIn, setLoggedIn] = useState(true);
     const location = useLocation();
+    let navigate = useNavigate();
+    
     let adultTix = 0;
     let childTix = 0;
     let totalTix = 0;
@@ -44,11 +49,20 @@ const ShowTimes = ()  => {
     const [checkout, setCheckout] = useState(false);
     const [showTime, setShowTime] = useState(false);
     const [totalTickets, setTotalTickets] = useState(0);
-
+    const handleCheckout = () => {
+        if (loggedIn === true) {
+            navigate('/CheckOut');
+        }
+        else {
+            navigate('/createAccount');
+        }
+    }
 
     const handleShowTimeSelect = () => {
+        
         setShowTime(true);
         setShowTimeSelected(true);
+
     }
     const handleConfirmDate = () => {
         let date = document.getElementById("date").value;
@@ -62,7 +76,6 @@ const ShowTimes = ()  => {
 
     const handleConfirmTickets = () => {
         //check if tickets available 
-        setShowSeats(true);
         adultTix = parseInt(document.getElementById("adults").value);
         childTix = parseInt(document.getElementById("children").value);
         console.log(childTix);
@@ -73,9 +86,15 @@ const ShowTimes = ()  => {
         if (isNaN(childTix)) {
             childTix = parseInt(0);
         }
+        if (childTix === 0 && adultTix === 0) {
+            alert("please select at least one ticket");
+        }
+        else {
         totalTix = childTix + adultTix - 1;
         console.log("come on" + totalTix);
         setTotalTickets(totalTix);
+        setShowSeats(true);
+        }
     }
     // const handleShowTimeSelectBa = () => {
     //     setFlip(false);
@@ -124,6 +143,7 @@ const ShowTimes = ()  => {
                     <div className = "buttonShow">
                         {times.map(time => (
                         <p className = "times" onClick={()=> {
+
                             handleShowTimeSelect();
                         }}>{time.time}</p>
                     ))}
@@ -132,6 +152,7 @@ const ShowTimes = ()  => {
             </div>
 {showTimeSelected &&
     <div className = "Tickets">
+        {/* <p id="timeS">Time selected:</p> */}
         <form>
             <label for="adults">Adult:</label><br/>
             <input type="number" id="adults" name="fname"/><br/>
@@ -145,7 +166,7 @@ const ShowTimes = ()  => {
     <>
     <h5> Choose your seats!</h5>
     <div id = "selected">
-
+    <h6>Seats: </h6>
     </div>
     <div className = "seatsContainer">
         <br/>
@@ -281,7 +302,7 @@ const ShowTimes = ()  => {
 {(checkout && 
     <div className = "end">
 
-<Link to="/checkOut" className = "button2">Checkout</Link>
+<Button className = "button" onClick = {handleCheckout}>Checkout</Button>
 
     </div>     
         

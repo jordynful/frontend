@@ -58,13 +58,14 @@ const MovieCard = props  => {
     <div className = "card">
         <h5>{props.title}</h5>
         {!flip &&(
-        <img src= {props.imageUrl} onClick = {handleClick}/>
+        <img className = "image" src= {props.imageUrl} onClick = {handleClick}/>
         )}
         {flip &&(
             <>
               <div className = "flippedSide">
                 
                 <p>{props.description}</p>
+                <p>Rating: {props.rating}</p>
                   <Link to={{pathname :"/ShowTimes"}} state={{from: props.title}} className='button'>See Show Times</Link>
 
                   <button onClick={openModal} className="button">Watch Trailer</button>

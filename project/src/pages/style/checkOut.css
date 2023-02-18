@@ -20,3 +20,28 @@ img {
     background-color: #2D3639;
     padding:20px;
 }
+
+.buttonReprise {
+
+  border-radius: 5px;
+  text-decoration: none;
+  border:none;
+  font-size: 1em;
+  color:black;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  /* width: 170px; */
+  box-shadow: 0 0 5px #eee;
+  background-image: linear-gradient(to right, #f07177 0%, #E50914 51%, #f07177 100%);
+  background-size: 200% auto;
+  cursor:pointer;
+
+}
+
+.buttonReprise:hover {
+background-position: right center;
+}

@@ -8,6 +8,8 @@ import { useState } from 'react';
 import ShowTimes from './pages/ShowTimes';
 import Payment from './pages/Payment';
 import CheckOut from './pages/CheckOut';
+import Confirmation from './pages/Confirmation';
+import Profile from './pages/Profile';
 import './App.css';
 import {
   BrowserRouter,
@@ -49,6 +51,8 @@ function App() {
             <Route path="/ShowTimes" element={<ShowTimes />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/checkout" element={<CheckOut />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/confirmationPage" element={<Confirmation />} />
         </Routes>
         </div>
         <Footer />

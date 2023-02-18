@@ -14,10 +14,6 @@
   border: 1px solid white;
   
 }
-img {
-width:200px;
-height:auto;
-}
 
 .popup-content {
     margin: auto;
@@ -58,6 +54,7 @@ height:auto;
 .button {
   border-radius: 5px;
   text-decoration: none;
+  cursor:pointer;
   border:none;
   font-size: 1em;
   color:black;
@@ -87,6 +84,11 @@ background-position: right center;
  }
 
  .back {
-  margin-top: 50px;
-  margin-right:150px;
+  margin-top: 10px;
+  margin-right:160px;
+ }
+
+ .image {
+  width:200px;
+  height:auto;
  }
