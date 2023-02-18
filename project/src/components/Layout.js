@@ -11,7 +11,8 @@ const Layout = props  => {
               // key={place._id}
               title={place.title}
               imageUrl={place.imageUrl}
-              description={place.description} />
+              description={place.description}
+              rating = {place.rating} />
       
           </>
         ))}
