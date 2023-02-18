@@ -1,15 +1,21 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Movies from './pages/Movies';
 import Book from './pages/Book';
-import Login from './pages/Login';
+import CreateAccount from './pages/CreateAccount';
 import { useState } from 'react';
 import ShowTimes from './pages/ShowTimes';
 import Payment from './pages/Payment';
 import CheckOut from './pages/CheckOut';
 import Confirmation from './pages/Confirmation';
 import Profile from './pages/Profile';
+import Signin from './pages/Signin';
+import Addpay from './pages/Addpay';
+import Admin from './pages/Admin';
+import Edit from './pages/Edit';
+import Delete from './pages/Delete';
+import Search from './pages/Search';
+import User from './pages/User';
 import './App.css';
 import {
   BrowserRouter,
@@ -42,17 +48,23 @@ function App() {
     <div className="App">
      <BrowserRouter>
         <Header/>
-        <div className="container">
+        <div >
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/movies" element={<Movies/>} />
             <Route path="/book-tickets" element={<Book />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/createAccount" element={<CreateAccount />} />
             <Route path="/ShowTimes" element={<ShowTimes />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/checkout" element={<CheckOut />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/confirmationPage" element={<Confirmation />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/Addpay" element={<Addpay />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/Edit" element={<Edit />} />
+            <Route path="/Delete" element={<Delete />} />
+            <Route path="/User" element={<User />} />
+            <Route path="/Search" element={<Search />} />
         </Routes>
         </div>
         <Footer />
